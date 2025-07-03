@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contato - Eeveelution</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .contato-container {
+      max-width: 700px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .contato-container h2 {
+      text-align: center;
+      color: #3b4cca;
+      margin-bottom: 20px;
+    }
+    .contato-form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+      color: #444;
+    }
+    .contato-form input,
+    .contato-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .contato-form textarea {
+      resize: vertical;
+      height: 120px;
+    }
+    .contato-form button {
+      margin-top: 20px;
+      background-color: #ebaed1;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .contato-form button:hover {
+      background-color: #e7a9bd;
+    }
+    .back-button {
+      display: block;
+      text-align: center;
+      margin: 30px auto 0;
+      padding: 10px 20px;
+      background-color: #e48dae;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      width: fit-content;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="container">
+      <h1>Entre em Contato</h1>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="contato-container">
+      <h2>Envie uma mensagem para a equipe Eeveelution!</h2>
+      <form class="contato-form" action="obrigado.html" method="GET">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <a href="../index.html" class="back-button">← Voltar à Página Inicial</a>
+  </main>
+
+  <footer class="spider-footer">
+    <div class="container">
+      <p>&copy; 2025 Eeveelution. Todos os direitos reservados.</p>
+      <p>Projeto não oficial para fins educacionais</p>
+    </div>
+  </footer>
+
+</body>
+</html>
