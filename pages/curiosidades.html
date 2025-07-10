@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Curiosidades sobre o Eevee</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     .curiosidade-grid {
       display: flex;
@@ -28,7 +29,7 @@
       background-color: #f0f8ff;
     }
     .curiosidade-card h3 {
-      color: #3b4cca;
+      color: #da3a84;
       margin-bottom: 10px;
     }
     .curiosidade-card p {
@@ -40,7 +41,7 @@
       text-align: center;
       margin: 30px auto;
       padding: 10px 20px;
-      background-color: #3b4cca;
+      background-color: #da3a84;
       color: #fff;
       font-weight: bold;
       border-radius: 8px;
@@ -48,11 +49,39 @@
       width: fit-content;
     }
     .back-button:hover {
-      background-color: #2c3792;
+      background-color: #e77fbf;
+    }
+
+    /* Botão fofo para música */
+    .music-button {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #f9c6d3;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      box-shadow: 0 4px 10px rgba(218, 58, 132, 0.5);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: white;
+      z-index: 1000;
+    }
+    .music-button:hover {
+      background: #da3a84;
+      box-shadow: 0 6px 15px rgba(218, 58, 132, 0.8);
     }
   </style>
 </head>
 <body>
+  <!-- Áudio oculto -->
+  <audio id="bg-music" src="../audio/do-the-dance.mp3" loop></audio>
+
   <header class="top-bar">
     <div class="container">
       <h1>Curiosidades sobre o Eevee</h1>
@@ -97,11 +126,46 @@
     <a href="../index.html" class="back-button">← Voltar à Página Inicial</a>
   </main>
 
-  <footer class="spider-footer">
+  <footer class="eevee-footer">
     <div class="container">
       <p>&copy; 2025 Eeveelution. Todos os direitos reservados.</p>
       <p>Projeto não oficial para fins educacionais</p>
     </div>
   </footer>
+
+  <!-- Botão fofo para controle da música -->
+  <button class="music-button" id="music-btn" aria-label="Tocar/Pausar Música">
+    <i class="fas fa-play"></i>
+  </button>
+
+  <script>
+    const music = document.getElementById('bg-music');
+    const btn = document.getElementById('music-btn');
+    const icon = btn.querySelector('i');
+
+    btn.addEventListener('click', () => {
+      if(music.paused){
+        music.play();
+        icon.classList.remove('fa-play');
+        icon.classList.add('fa-pause');
+      } else {
+        music.pause();
+        icon.classList.remove('fa-pause');
+        icon.classList.add('fa-play');
+      }
+    });
+
+    // Opcional: tenta tocar música no primeiro clique na página também
+    window.addEventListener('click', () => {
+      if(music.paused){
+        music.play().then(() => {
+          icon.classList.remove('fa-play');
+          icon.classList.add('fa-pause');
+        }).catch(() => {
+          // Não foi possível por política de autoplay
+        });
+      }
+    }, { once: true });
+  </script>
 </body>
 </html>

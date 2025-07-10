@@ -1,195 +1,206 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eeveelution</title>
-<link rel="icon" href="images/eevee-icon.png" type="image/png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eeveelution</title>
+  <link rel="icon" href="images/eevee-icon.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- 🎀 Estilo do botão de música -->
+  <style>
+    #music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 999;
+      transition: transform 0.3s ease;
+    }
+
+    #music-btn:hover {
+      transform: scale(1.1);
+    }
+
+    #music-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 480px) {
+      #music-icon {
+        width: 45px;
+        height: 45px;
+      }
+    }
+  </style>
 </head>
 <body>
+
+<!-- 🎵 Áudio oculto -->
+<audio id="bg-music" src="audio/do-the-dance.mp3" loop></audio>
+
+<!-- Botão de música (pokébola rosa) -->
+<button id="music-btn" title="Tocar música" aria-label="Tocar ou pausar música">
+  <img src="img/love ball sticker.jfif" alt="Pokébola Rosa" id="music-icon" />
+</button>
+
 <!-- Top Bar -->
-<audio controls>
-    <source src="audio/WhatsApp Audio 2025-07-03 at 09.25.11.mp4" type="audio/mpeg">
-    O seu navegador não suporta o elemento de áudio.
-  </audio>
 <div class="top-bar">
-<div class="container">
-<div class="company-logo">
-<img src="img/logo.jfif" alt="Eevee Logo" class="logo-circle">
-</div>
-<div class="company-name">
-<h1>EEVEELUTION</h1>
-</div>
-<nav class="main-menu">
-<ul>
-<li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
-<li><a href="pages/formas.html"><i class="fas fa-paw"></i> Evoluções</a></li>
-<li><a href="pages/sobre.html"><i class="fas fa-info-circle"></i> Sobre</a></li
-<li><a href="pages/curiosidades.html"><i class="fas fa-lightbulb"></i> Curiosidades</a></li>
-<li><a href="pages/contato.html"><i class="fas fa-envelope"></i> Contato</a></li>
-<li><a href="pages/eveelutions.html"><i class="fas fa-star"></i> Eeveelutions Detalhadas</a></li>
-</ul>
-</nav>
-</div>
+  <div class="container">
+    <div class="company-logo">
+      <img src="img/logo.jfif" alt="Eevee Logo" class="logo-circle" />
+    </div>
+    <div class="company-name">
+      <h1>EEVEELUTION</h1>
+    </div>
+  </div>
 </div>
 
-<main class="main-content container">
-<section class="card spider-card">
-<h2><i class="fas fa-paw"></i> Evoluções de Eevee</h2>
-<div class="character-list">
+<div class="layout container">
+  <!-- Sidebar com menu -->
+  <aside class="sidebar">
+    <nav class="main-menu">
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+        <li><a href="pages/formas.html"><i class="fas fa-paw"></i> Evoluções</a></li>
+        <li><a href="pages/sobre.html"><i class="fas fa-info-circle"></i> Sobre</a></li>
+        <li><a href="pages/curiosidades.html"><i class="fas fa-lightbulb"></i> Curiosidades</a></li>
+        <li><a href="pages/contato.html"><i class="fas fa-envelope"></i> Contato</a></li>
+        <li><a href="pages/eveelutions.html"><i class="fas fa-star"></i> Eeveelutions Detalhadas</a></li>
+      </ul>
+    </nav>
+  </aside>
 
-<div class="character-item">
-<div class="character-image">
-<img src="img/evee.jfif" alt="Eevee">
-</div>
-<div class="character-info">
-<h3>Eevee</h3>
-<p>Tipo: Normal</p>
-<span class="universe">Base</span>
-</div>
-</div>
+  <!-- Conteúdo principal -->
+  <main class="main-content">
+    <div class="content-area">
 
-<div class="character-item">
-<div class="character-image">
-<img src="img/vaporeon.jfif" alt="Vaporeon">
-</div>
-<div class="character-info">
-<h3>Vaporeon</h3>
-<p>Tipo: Água</p>
-<span class="universe">Evolução com Water Stone</span>
-</div>
-</div>
+      <!-- Evoluções de Eevee -->
+      <section class="cards-grid">
+        <article class="card eevee-card">
+          <h2><i class="fas fa-paw"></i> Evoluções de Eevee</h2>
+          <div class="character-list">
+            <div class="character-item"><div class="character-image"><img src="img/evee.jfif" alt="Eevee" /></div><div class="character-info"><h3>Eevee</h3><p>Tipo: Normal</p><span class="universe">Base</span></div></div>
+            <div class="character-item"><div class="character-image"><img src="img/vaporeon.jfif" alt="Vaporeon" /></div><div class="character-info"><h3>Vaporeon</h3><p>Tipo: Água</p><span class="universe">Water Stone</span></div></div>
+            <div class="character-item"><div class="character-image"><img src="img/jolteon.jfif" alt="Jolteon" /></div><div class="character-info"><h3>Jolteon</h3><p>Tipo: Elétrico</p><span class="universe">Thunder Stone</span></div></div>
+            <div class="character-item"><div class="character-image"><img src="img/flareon.jfif" alt="Flareon" /></div><div class="character-info"><h3>Flareon</h3><p>Tipo: Fogo</p><span class="universe">Fire Stone</span></div></div>
+            <div class="character-item"><div class="character-image"><img src="img/espeon.jfif" alt="Espeon" /></div><div class="character-info"><h3>Espeon</h3><p>Tipo: Psíquico</p><span class="universe">Amizade de dia</span></div></div>
+            <div class="character-item"><div class="character-image"><img src="img/umbreon.jfif" alt="Umbreon" /></div><div class="character-info"><h3>Umbreon</h3><p>Tipo: Noturno</p><span class="universe">Amizade de noite</span></div></div>
+            <div class="character-item"><div class="character-image"><img src="img/Leafeon.jfif" alt="Leafeon" /></div><div class="character-info"><h3>Leafeon</h3><p>Tipo: Planta</p><span class="universe">Moss Rock / Leaf Stone</span></div></div>
+            <div class="character-item"><div class="character-image"><img src="img/glaceon.jfif" alt="Glaceon" /></div><div class="character-info"><h3>Glaceon</h3><p>Tipo: Gelo</p><span class="universe">Ice Rock / Ice Stone</span></div></div>
+            <div class="character-item"><div class="character-image"><img src="img/sylveon.jfif" alt="Sylveon" /></div><div class="character-info"><h3>Sylveon</h3><p>Tipo: Fada</p><span class="universe">Amizade + move Fada</span></div></div>
+          </div>
+        </article>
+      </section>
 
-<div class="character-item">
-<div class="character-image">
-<img src="img/jolteon.jfif" alt="Jolteon">
-</div>
-<div class="character-info">
-<h3>Jolteon</h3>
-<p>Tipo: Elétrico</p>
-<span class="universe">Evolução com Thunder Stone</span>
-</div>
-</div>
+      <!-- Galeria -->
+      <section class="cards-grid">
+        <article class="card eevee-card">
+          <h2><i class="fas fa-images"></i> Galeria</h2>
+          <div class="gallery-grid">
+            <div class="gallery-item"><img src="img/eveelutions.jfif" alt="Arte 1" /><div class="gallery-caption">Todas as Evoluções</div></div>
+            <div class="gallery-item"><img src="img/battle.jfif" alt="Arte 2" /><div class="gallery-caption">Eevee em Batalha</div></div>
+            <div class="gallery-item"><img src="img/friends.jfif" alt="Arte 3" /><div class="gallery-caption">Eevee e seus Amigos</div></div>
+          </div>
+        </article>
+      </section>
 
-<div class="character-item">
-<div class="character-image">
-<img src="img/flareon.jfif" alt="Flareon">
-</div>
-<div class="character-info">
-<h3>Flareon</h3>
-<p>Tipo: Fogo</p>
-<span class="universe">Evolução com Fire Stone</span>
-</div>
-</div>
+      <!-- Links úteis -->
+      <section class="cards-grid">
+        <article class="card eevee-card">
+          <h2><i class="fas fa-link"></i> Links Úteis</h2>
+          <ul class="eevee-links">
+            <li><a href="https://www.pokemon.com/br/" target="_blank"><i class="fas fa-globe"></i> Site Oficial Pokémon</a></li>
+            <li><a href="https://bulbapedia.bulbagarden.net/wiki/Eeveelution" target="_blank"><i class="fas fa-book"></i> Bulbapedia</a></li>
+            <li><a href="https://www.pokemon.com/br/pokedex/eevee" target="_blank"><i class="fas fa-info"></i> Pokédex Completa</a></li>
+          </ul>
+        </article>
+      </section>
 
-<div class="character-item">
-<div class="character-image">
-<img src="img/espeon.jfif" alt="Espeon">
-</div>
-<div class="character-info">
-<h3>Espeon</h3>
-<p>Tipo: Psíquico</p>
-<span class="universe">Amizade de dia</span>
-</div>
-</div>
-
-<div class="character-item">
-<div class="character-image">
-<img src="img/umbreon.jfif" alt="Umbreon">
-</div>
-<div class="character-info">
-<h3>Umbreon</h3>
-<p>Tipo: Noturno</p>
-<span class="universe">Amizade de noite</span>
-</div>
+    </div>
+  </main>
 </div>
 
-<div class="character-item">
-<div class="character-image">
-<img src="img/Leafeon.jfif" alt="Leafeon">
-</div>
-<div class="character-info">
-<h3>Leafeon</h3>
-<p>Tipo: Planta</p>
-<span class="universe">Moss Rock ou Leaf Stone</span>
-</div>
-</div>
+<!-- Footer -->
+<footer class="eevee-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo"></div>
+      <div class="footer-info">
+        <p>&copy; 2025 Eeveelution. Todos os direitos reservados para Jenny.</p>
+        <p>Projeto não oficial para fins educacionais</p>
+      </div>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/Pokemon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/pokemon" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/Pokemon" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.youtube.com/@OfficialPokemonTV" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+</footer>
 
-<div class="character-item">
-<div class="character-image">
-<img src="img/glaceon.jfif" alt="Glaceon">
-</div>
-<div class="character-info">
-<h3>Glaceon</h3>
-<p>Tipo: Gelo</p>
-<span class="universe">Ice Rock ou Ice Stone</span>
-</div>
-</div>
+<!-- 🎵 Script do botão de música -->
+<script>
+  const btn = document.getElementById('music-btn');
+  const music = document.getElementById('bg-music');
+  let isPlaying = false;
 
-<div class="character-item">
-<div class="character-image">
-<img src="img/sylveon.jfif" alt="Sylveon">
-</div>
-<div class="character-info">
-<h3>Sylveon</h3>
-<p>Tipo: Fada</p>
-<span class="universe">Amizade + movimento Fada</span>
-</div>
-</div>
+  // Função para atualizar o título do botão
+  function updateBtnTitle() {
+    btn.title = isPlaying ? "Pausar música" : "Tocar música";
+  }
 
-</div>
-</section>
+  // Ler o estado salvo no localStorage
+  const savedState = localStorage.getItem('musicPlaying');
+  if (savedState === "true") {
+    music.play().then(() => {
+      isPlaying = true;
+      updateBtnTitle();
+    }).catch(() => {
+      // autoplay bloqueado, fica pausado
+      isPlaying = false;
+      updateBtnTitle();
+    });
+  } else {
+    isPlaying = false;
+    updateBtnTitle();
+  }
 
-<section class="card spider-card">
-<h2><i class="fas fa-images"></i> Galeria</h2>
-<div class="gallery-grid">
-<div class="gallery-item">
-<img src="img/eveelutions.jfif" alt="Arte 1">
-<div class="gallery-caption">Todas as Evoluções</div>
-</div>
-<div class="gallery-item">
-<img src="img/battle.jfif" alt="Arte 2">
-<div class="gallery-caption">Eevee em Batalha</div>
-</div>
-<div class="gallery-item">
-<img src="img/friends.jfif" alt="Arte 3">
-<div class="gallery-caption">Eevee e seus Amigos</div>
-</div>
-</div>
-</section>
+  btn.addEventListener('click', () => {
+    if (!isPlaying) {
+      music.play();
+      isPlaying = true;
+      localStorage.setItem('musicPlaying', 'true');
+    } else {
+      music.pause();
+      isPlaying = false;
+      localStorage.setItem('musicPlaying', 'false');
+    }
+    updateBtnTitle();
+  });
 
-<section class="card spider-card">
-<h2><i class="fas fa-link"></i> Links Úteis</h2>
-<ul class="spider-links">
-<li><a href="https://www.pokemon.com/br/" target="_blank"><i class="fas fa-globe"></i> Site Oficial Pokémon</a></li>
-<li><a href="https://bulbapedia.bulbagarden.net/wiki/Eeveelution" target="_blank"><i class="fas fa-book"></i> Bulbapedia</a></li>
-<li><a href="https://www.pokemon.com/br/pokedex/eevee" target="_blank"><i class="fas fa-info"></i> Pokédex Completa</a></li>
-</ul>
-</section>
-</main>
+  // Se o usuário pausar ou terminar a música fora do botão, sincronize o estado
+  music.addEventListener('pause', () => {
+    isPlaying = false;
+    updateBtnTitle();
+    localStorage.setItem('musicPlaying', 'false');
+  });
+  music.addEventListener('play', () => {
+    isPlaying = true;
+    updateBtnTitle();
+    localStorage.setItem('musicPlaying', 'true');
+  });
+</script>
 
-<footer class="spider-footer">
-<div class="container">
-<div class="footer-content">
-<div class="footer-logo"></div>
-<div class="footer-info">
-<p>&copy; 2025 Eeveelution. Todos os direitos reservados.</p>
-<p>Projeto não oficial para fins educacionais</p>
-</div>
-</div>
-<div class="social-icons">
-<a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://x.com" target="_blank"><i class="fab fa-twitter"></i></a>
-<a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-</div>
-</div>
-</footer> 
-<audio controls>
-    <source src="audio/WhatsApp Audio 2025-07-03 at 09.25.11.mp4" type="audio/mpeg">
-    O seu navegador não suporta o elemento de áudio.
-  </audio>
 </body>
 </html>
+
+
+
